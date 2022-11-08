@@ -1,0 +1,59 @@
+#joinBtn
+{
+    -fx-background-color: rgb(231, 145, 29);
+    -fx-text-fill: RED;
+    -fx-background-radius: 0 0 0 0;
+}
+
+#joinBtn:hover
+{
+    -fx-background-color: rgb(232, 184, 65);
+    -fx-text-fill: WHITE;
+}
+
+#playerName
+{
+    -fx-background-color: TRANSPARENT;
+    -fx-border-color: rgb(231, 145, 29);
+    -fx-border-width: 1.0;
+    -fx-border-radius: 0 0 0 0;
+    -fx-text-fill: WHITE;
+}
+
+#playerName:hover
+{
+    -fx-background-color: rgba(255, 25, 255, 0.1);
+}
+
+#cardContainer
+{
+    -fx-background-color: TRANSPARENT;
+}
+
+.text-area
+{
+    -fx-background-color: TRANSPARENT;
+    -fx-text-fill: rgb(231, 145, 29);
+    -fx-outline: NONE;
+    -fx-border-radius: 0 0 0 0;
+    -fx-border-width: 1.0;
+    -fx-border-color: rgb(231, 145, 29);
+}
+
+.text-area .content
+{
+    -fx-background-color: TRANSPARENT;
+}
+
+.scroll-pane
+{
+   -fx-background-color: TRANSPARENT;
+   -fx-border-radius: 0 0 0 0;
+   -fx-border-width: 1.0;
+   -fx-border-color: rgb(231, 145, 29);
+}
+
+.scroll-pane > .viewport
+{
+   -fx-background-color: TRANSPARENT;
+}

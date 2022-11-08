@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.Controller">
+   <children>
+      <AnchorPane fx:id="highScore" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: rgba(0, 0, 0, 0.8);" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label fx:id="highScores" alignment="CENTER" layoutX="254.0" layoutY="152.0" prefHeight="354.0" prefWidth="1000.0" textFill="#e7951d" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <font>
+                  <Font name="Consolas Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefHeight="43.0" prefWidth="554.0" text="High Scores" textFill="#e7951d" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="100.0">
+               <font>
+                  <Font name="Consolas Bold" size="36.0" />
+               </font>
+            </Label>
+            <Button id="joinBtn" fx:id="homeBtn" layoutX="833.0" layoutY="614.0" mnemonicParsing="false" onMouseClicked="#home" prefWidth="120.0" text="Home" visible="false">
+               <font>
+                  <Font name="Consolas" size="12.0" />
+               </font>
+            </Button>
+            <FontAwesomeIcon fill="#91201a" glyphName="TIMES" layoutX="950.0" layoutY="30.0" onMouseClicked="#quit" size="20px" />
+            <FontAwesomeIcon fill="#91201a" glyphName="MINUS" layoutX="900.0" layoutY="30.0" onMouseClicked="#minimize" size="20px" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="gamePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fitHeight="720.0" fitWidth="1000.0" pickOnBounds="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <image>
+                  <Image url="@background.jpg" />
+               </image>
+            </ImageView>
+            <Region prefHeight="389.0" prefWidth="520.0" style="-fx-background-color: rgba(0, 0, 0, 0.65);" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <FontAwesomeIcon fill="#91201a" glyphName="TIMES" layoutX="950.0" layoutY="30.0" onMouseClicked="#quit" size="20px" />
+            <FontAwesomeIcon fill="#91201a" glyphName="MINUS" layoutX="900.0" layoutY="30.0" onMouseClicked="#minimize" size="20px" />
+            <ScrollPane id="cardContainer" fx:id="currentPlayerCards" hbarPolicy="NEVER" layoutX="324.0" layoutY="525.0" onScroll="#cardScroll" prefHeight="175.0" prefWidth="390.0" vbarPolicy="NEVER">
+               <content>
+                  <HBox prefHeight="160.0" prefWidth="380.0" spacing="5.0">
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </HBox>
+               </content>
+            </ScrollPane>
+            <ScrollPane id="cardContainer" fx:id="playerTwoCards" hbarPolicy="NEVER" layoutX="306.0" layoutY="61.0" onScroll="#cardScroll" prefHeight="175.0" prefWidth="390.0" vbarPolicy="NEVER">
+               <content>
+                  <HBox prefHeight="160.0" prefWidth="380.0" spacing="5.0">
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </HBox>
+               </content>
+            </ScrollPane>
+            <ScrollPane id="cardContainer" fx:id="playerOneCards" hbarPolicy="NEVER" layoutX="-73.0" layoutY="330.0" onScroll="#cardScroll" prefHeight="175.0" prefWidth="390.0" rotate="90.0" vbarPolicy="NEVER">
+               <content>
+                  <HBox prefHeight="160.0" prefWidth="380.0" spacing="5.0">
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </HBox>
+               </content>
+            </ScrollPane>
+            <ScrollPane id="cardContainer" fx:id="playerThreeCards" hbarPolicy="NEVER" layoutX="670.0" layoutY="330.0" onScroll="#cardScroll" prefHeight="175.0" prefWidth="390.0" rotate="-90.0" vbarPolicy="NEVER">
+               <content>
+                  <HBox prefHeight="160.0" prefWidth="380.0" spacing="5.0">
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </HBox>
+               </content>
+            </ScrollPane>
+            <Label fx:id="dealerScore" layoutX="306.0" layoutY="276.0" text="Dealer's Score: 0" textFill="#e7951d">
+               <font>
+                  <Font name="Consolas Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="playerOneName" alignment="CENTER" layoutX="35.0" layoutY="172.0" prefHeight="18.0" prefWidth="175.0" textFill="#e7951d">
+               <font>
+                  <Font name="Consolas Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="playerThreeName" alignment="CENTER" layoutX="777.0" layoutY="163.0" prefHeight="18.0" prefWidth="175.0" textFill="#e7951d">
+               <font>
+                  <Font name="Consolas Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="playerTwoName" alignment="CENTER" layoutX="306.0" layoutY="14.0" prefHeight="18.0" prefWidth="390.0" textFill="#e7951d">
+               <font>
+                  <Font name="Consolas Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="playerOneScore" alignment="CENTER" layoutX="35.0" layoutY="199.0" prefHeight="18.0" prefWidth="175.0" textFill="#e7951d">
+               <font>
+                  <Font name="Consolas Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="playerThreeScore" alignment="CENTER" layoutX="777.0" layoutY="199.0" prefHeight="18.0" prefWidth="175.0" textFill="#e7951d">
+               <font>
+                  <Font name="Consolas Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="currentPlayerScore" alignment="CENTER" layoutX="324.0" layoutY="507.0" prefHeight="18.0" prefWidth="390.0" textFill="#e7951d">
+               <font>
+                  <Font name="Consolas Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="playerTwoScore" alignment="CENTER" layoutX="305.0" layoutY="42.0" prefHeight="18.0" prefWidth="390.0" textFill="#e7951d">
+               <font>
+                  <Font name="Consolas Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="currentPlayerName" alignment="CENTER" layoutX="324.0" layoutY="489.0" prefHeight="18.0" prefWidth="390.0" textFill="#e7951d">
+               <font>
+                  <Font name="Consolas Bold" size="16.0" />
+               </font>
+            </Label>
+            <HBox fx:id="dealOrHold" alignment="CENTER" layoutX="401.0" layoutY="450.0" prefHeight="18.0" prefWidth="200.0" spacing="20.0" visible="false">
+               <children>
+                  <Button id="joinBtn" focusTraversable="false" mnemonicParsing="false" onMouseClicked="#onHold" prefWidth="90.0" text="Hold">
+                     <font>
+                        <Font name="Consolas" size="12.0" />
+                     </font>
+                  </Button>
+                  <Button id="joinBtn" focusTraversable="false" mnemonicParsing="false" onMouseClicked="#onDeal" prefWidth="90.0" text="Deal">
+                     <font>
+                        <Font name="Consolas" size="12.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+            <TextArea fx:id="log" editable="false" focusTraversable="false" layoutX="306.0" layoutY="305.0" prefHeight="130.0" prefWidth="390.0" styleClass="textarea" wrapText="true">
+               <font>
+                  <Font name="Consolas Bold" size="14.0" />
+               </font>
+            </TextArea>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="waitPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <ImageView fitHeight="720.0" fitWidth="1000.0" pickOnBounds="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <Image url="@background.jpg" />
+         </ImageView>
+         <Region layoutX="1.0" prefHeight="389.0" prefWidth="520.0" style="-fx-background-color: rgba(0, 0, 0, 0.5);" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+         <Label alignment="CENTER" layoutX="301.0" layoutY="57.0" text="...Loading..." textFill="#e7951d" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+            <font>
+               <Font name="Consolas Bold" size="36.0" />
+            </font>
+         </Label>
+         <Button id="joinBtn" fx:id="startBtn" disable="true" focusTraversable="false" layoutX="830.0" layoutY="591.0" mnemonicParsing="false" onMouseClicked="#onStartGame" prefHeight="30.0" prefWidth="120.0" text="Start">
+            <font>
+               <Font name="Consolas" size="14.0" />
+            </font>
+         </Button>
+         <FontAwesomeIcon fill="#91201a" glyphName="TIMES" layoutX="950.0" layoutY="30.0" onMouseClicked="#quit" size="20px" />
+         <Label alignment="CENTER" layoutX="166.0" layoutY="400.0" text="Waiting for the other players" textFill="#e7951d" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+            <font>
+               <Font name="Consolas Bold" size="40.0" />
+            </font>
+         </Label>
+         <Label alignment="CENTER" layoutX="334.0" layoutY="232.0" prefHeight="58.0" prefWidth="1000.0" text="Scroll on each player to view their cards" textFill="#e7951d" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+            <font>
+               <Font name="Consolas Bold" size="20.0" />
+            </font>
+         </Label>
+         <Label fx:id="serverStatus" alignment="CENTER" layoutX="346.0" layoutY="140.0" prefHeight="40.0" prefWidth="1000.0" text="Not Connected To Server" textFill="#91201a" underline="true" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+            <font>
+               <Font name="Consolas Bold" size="18.0" />
+            </font>
+         </Label>
+         <FontAwesomeIcon fill="#91201a" glyphName="MINUS" layoutX="900.0" layoutY="30.0" onMouseClicked="#minimize" size="20px" />
+      </AnchorPane>
+      <AnchorPane fx:id="menu" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fitHeight="720.0" fitWidth="1000.0" pickOnBounds="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <image>
+                  <Image url="@background.jpg" />
+               </image>
+            </ImageView>
+            <Region prefHeight="389.0" prefWidth="520.0" style="-fx-background-color: rgba(0, 0, 0, 0.5);" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <Label alignment="CENTER" layoutX="252.0" layoutY="209.0" prefHeight="91.0" prefWidth="1000.0" text="Pirates Pontoon" textFill="#e7951d" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <font>
+                  <Font name="Consolas Bold" size="42.0" />
+               </font>
+            </Label>
+            <Button id="joinBtn" focusTraversable="false" layoutX="400.0" layoutY="510.0" mnemonicParsing="false" onMouseClicked="#onJoinGame" prefHeight="40.0" prefWidth="200.0" text="Join Game">
+               <font>
+                  <Font name="Consolas" size="14.0" />
+               </font>
+            </Button>
+            <FontAwesomeIcon fill="#91201a" glyphName="TIMES" layoutX="950.0" layoutY="30.0" onMouseClicked="#quit" size="20px" />
+            <TextField id="playerName" fx:id="playerName" alignment="CENTER" focusTraversable="false" layoutX="346.0" layoutY="346.0" prefHeight="29.0" prefWidth="308.0" promptText="Enter Player Name">
+               <font>
+                  <Font name="Consolas" size="14.0" />
+               </font>
+            </TextField>
+            <FontAwesomeIcon fill="#91201a" glyphName="MINUS" layoutX="900.0" layoutY="30.0" onMouseClicked="#minimize" size="20px" />
+            <HBox layoutX="346.0" layoutY="388.0" prefHeight="75.0" prefWidth="308.0" spacing="20.0">
+               <children>
+                  <TextField id="playerName" fx:id="gameAddress" alignment="CENTER" focusTraversable="false" prefHeight="29.0" prefWidth="175.0" promptText="Address">
+                     <font>
+                        <Font name="Consolas" size="14.0" />
+                     </font>
+                  </TextField>
+                  <TextField id="playerName" fx:id="gamePort" alignment="CENTER" focusTraversable="false" layoutX="10.0" layoutY="10.0" prefHeight="29.0" prefWidth="113.0" promptText="Port">
+                     <font>
+                        <Font name="Consolas" size="14.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+      <Region fx:id="loading" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: rgba(0, 0, 0, 0.5);" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+   </children>
+</AnchorPane>
